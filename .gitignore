@@ -1,0 +1,37 @@
+# Ignore Maven target directory
+/target/
+/out/
+
+# Ignore IntelliJ IDEA specific files
+/.idea/
+.idea
+.vscode
+/*.iml
+/.classpath
+/.project
+/.settings/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+hs_err_pid*
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled Java files
+*.class
+
+# Ignore build artifacts
+*.jar
+*.war
+*.ear
+
+# Ignore dependency caches
+/.mvn/
+/.m2/
+
+# Ignore coverage reports (if using Jacoco or other tools)
+coverage/
+jacoco.exec
