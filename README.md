@@ -1,6 +1,6 @@
 # Task Tracker - Requirement Document
 
-Task Tracker is a project used to track and manage your tasks. This project is a **Command-Line Interface (CLI) application** that helps users keep track of their tasks—what needs to be done, what is in progress, and what has been completed. 
+Task Tracker is a project used to track and manage your tasks. This project is a **Command-Line Interface (CLI) application** that helps users keep track of their tasks—what needs to be done, what is in progress, and what has been completed. Once the application is started then it will be a commandline interface in which users can execute commands and achieve their needs.
 
 ---
 
@@ -57,28 +57,25 @@ Task Tracker is a project used to track and manage your tasks. This project is a
  list in-progress
 
 ## 🔐 User Authentication
+### Login
+users can login with the help of the below command
+```
+login -u <user name> -p <password>
+```
+### Logout
+users can log out with the help of the below command.
+```
+logout
+```
+### Users can register
+users can register with the help of the below command
+```
+register -u <user name> -n <name> -p <password> -phone <phone number>
+-- <otp>
+```
+### Users can show who is logged in
+users can get the current user who logged in using the following command.
+```
+whoami
+```
 
-### Register a new user
-```sh
-task-cli register --username krishna --password mysecurepassword
-Login
-sh
-Copy
-Edit
-task-cli login --username krishna --password mysecurepassword
-Logout
-sh
-Copy
-Edit
-task-cli logout
-🔔 WhatsApp Notifications
-Enable WhatsApp notifications for tasks
-sh
-Copy
-Edit
-task-cli notify --enable
-Disable notifications
-sh
-Copy
-Edit
-task-cli notify --disable
