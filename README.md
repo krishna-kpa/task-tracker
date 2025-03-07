@@ -1,104 +1,84 @@
-# Task Tracker Requirement Document - Credits - roadmap.sh
+# Task Tracker - Requirement Document
 
-Build a CLI app to track your tasks and manage your to-do list.
-
-Start building, submit solution and get feedback from the community.
-
-## Start Working
-- **2** Submit Solution  
-- **5 upvotes**  
-- **10 upvotes**  
-
-Task Tracker is a project used to track and manage your tasks. In this task, you will build a simple command-line interface (CLI) to track what you need to do, what you have done, and what you are currently working on. This project will help you practice your programming skills, including working with the filesystem, handling user inputs, and building a simple CLI application.
+Task Tracker is a project used to track and manage your tasks. This project is a **Command-Line Interface (CLI) application** that helps users keep track of their tasks—what needs to be done, what is in progress, and what has been completed. 
 
 ---
 
-## Requirements
+## 📌 Features
 
-The application should run from the command line, accept user actions and inputs as arguments, and store the tasks in a JSON file. The user should be able to:
+### 📝 Task Management
+- **Add a task**
+- **Update a task**
+- **Delete a task**
+- **Mark a task as in progress or done**
+- **List all tasks**
+- **Filter tasks by status** (`todo`, `in-progress`, `done`)  
 
-- Add, Update, and Delete tasks  
-- Mark a task as **in progress** or **done**  
-- List all tasks  
-- List all tasks that are **done**  
-- List all tasks that are **not done**  
-- List all tasks that are **in progress**  
+### 🔐 User Authentication
+- **User registration**
+- **Login & Logout** using a secure authentication mechanism
 
-### Constraints:
-- You can use **any programming language** to build this project.  
-- Use **positional arguments** in the command line to accept user inputs.  
-- Use a **JSON file** to store the tasks in the current directory.  
-- The **JSON file should be created** if it does not exist.  
-- Use the **native file system module** of your programming language to interact with the JSON file.  
-- **Do not** use any external libraries or frameworks to build this project.  
-- Ensure to **handle errors and edge cases** gracefully.  
+### 🔔 WhatsApp Notifications
+- **Task reminders** via WhatsApp for upcoming deadlines  
 
 ---
 
-## Example Usage
+## ⚙️ Requirements
 
-The list of commands and their usage is given below:
+- The application **must run from the command line**.
+- User actions and inputs **should be passed as command-line arguments**.
+- **Tasks must be stored in a MongoDB database**.
+- **Authentication and authorization must be implemented**.
+- Users should receive **WhatsApp notifications for upcoming tasks**.
 
+---
+
+## 💡 Example Usage
+
+### 📌 Task Management Commands
 # Adding a new task
-task-cli add "Buy groceries"
+ add "Buy groceries"
 # Output: Task added successfully (ID: 1)
 
 # Updating and deleting tasks
-task-cli update 1 "Buy groceries and cook dinner"
-task-cli delete 1
+ update 1 "Buy groceries and cook dinner"
+ delete 1
 
 # Marking a task as in progress or done
-task-cli mark-in-progress 1
-task-cli mark-done 1
+ mark-in-progress 1
+ mark-done 1
 
 # Listing all tasks
-task-cli list
+ list
 
 # Listing tasks by status
-task-cli list done
-task-cli list todo
-task-cli list in-progress
-## Task Properties
+ list done
+ list todo
+ list in-progress
 
-Each task should have the following properties:
+## 🔐 User Authentication
 
-- **id**: A unique identifier for the task  
-- **description**: A short description of the task  
-- **status**: The status of the task (`todo`, `in-progress`, `done`)  
-- **createdAt**: The date and time when the task was created  
-- **updatedAt**: The date and time when the task was last updated  
-
-Make sure to add these properties to the JSON file when adding a new task and update them when updating a task.
-
----
-
-## Getting Started
-
-### 1. Set Up Your Development Environment
-- Choose a programming language you are comfortable with (e.g., Python, JavaScript, etc.).
-- Ensure you have a code editor or IDE installed (e.g., VSCode, PyCharm).
-
-### 2. Project Initialization
-- Create a new project directory for your Task Tracker CLI.
-- Initialize a version control system (e.g., Git) to manage your project.
-
-### 3. Implementing Features
-- Start by creating a basic CLI structure to handle user inputs.
-- Implement each feature one by one, ensuring to test thoroughly before moving to the next.  
-  _e.g., Implement adding task functionality first, listing next, then updating, marking as in progress, etc._
-
-### 4. Testing and Debugging
-- Test each feature individually to ensure they work as expected.
-- Look at the JSON file to verify that the tasks are being stored correctly.
-- Debug any issues that arise during development.
-
-### 5. Finalizing the Project
-- Ensure all features are implemented and tested.
-- Clean up your code and add comments where necessary.
-- Write a good `README` file on how to use your Task Tracker CLI.
-
----
-
-By the end of this project, you will have developed a practical tool that can help you or others manage tasks efficiently. This project lays a solid foundation for more advanced programming projects and real-world applications.
-
-**Happy coding! 🚀**
+### Register a new user
+```sh
+task-cli register --username krishna --password mysecurepassword
+Login
+sh
+Copy
+Edit
+task-cli login --username krishna --password mysecurepassword
+Logout
+sh
+Copy
+Edit
+task-cli logout
+🔔 WhatsApp Notifications
+Enable WhatsApp notifications for tasks
+sh
+Copy
+Edit
+task-cli notify --enable
+Disable notifications
+sh
+Copy
+Edit
+task-cli notify --disable
