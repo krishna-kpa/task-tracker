@@ -1,104 +1,89 @@
-# Task Tracker Requirement Document - Credits - roadmap.sh
+# Task Tracker - Requirement Document
 
-Build a CLI app to track your tasks and manage your to-do list.
-
-Start building, submit solution and get feedback from the community.
-
-## Start Working
-- **2** Submit Solution  
-- **5 upvotes**  
-- **10 upvotes**  
-
-Task Tracker is a project used to track and manage your tasks. In this task, you will build a simple command-line interface (CLI) to track what you need to do, what you have done, and what you are currently working on. This project will help you practice your programming skills, including working with the filesystem, handling user inputs, and building a simple CLI application.
+Task Tracker is a project used to track and manage your tasks. This project is a **Command-Line Interface (CLI) application** that helps users keep track of their tasks—what needs to be done, what is in progress, and what has been completed. Once the application is started then it will be a commandline interface in which users can execute commands and achieve their needs.
 
 ---
 
-## Requirements
+## 📌 Features
 
-The application should run from the command line, accept user actions and inputs as arguments, and store the tasks in a JSON file. The user should be able to:
+### 📝 Task Management
+- **Add a task**
+- **Update a task**
+- **Delete a task**
+- **List all tasks**
+- **Filter tasks by status** (`todo`, `in-progress`, `done`)  
 
-- Add, Update, and Delete tasks  
-- Mark a task as **in progress** or **done**  
-- List all tasks  
-- List all tasks that are **done**  
-- List all tasks that are **not done**  
-- List all tasks that are **in progress**  
+### 🔐 User Authentication
+- **User registration**
+- **Login & Logout** using a secure authentication mechanism
 
-### Constraints:
-- You can use **any programming language** to build this project.  
-- Use **positional arguments** in the command line to accept user inputs.  
-- Use a **JSON file** to store the tasks in the current directory.  
-- The **JSON file should be created** if it does not exist.  
-- Use the **native file system module** of your programming language to interact with the JSON file.  
-- **Do not** use any external libraries or frameworks to build this project.  
-- Ensure to **handle errors and edge cases** gracefully.  
+### 🔔 WhatsApp Notifications
+- **Task reminders** via WhatsApp for upcoming deadlines  
 
 ---
 
-## Example Usage
+## ⚙️ Requirements
 
-The list of commands and their usage is given below:
+- The application **must run from the command line**.
+- User actions and inputs **should be passed as command-line arguments**.
+- **Tasks must be stored in a MongoDB database**.
+- **Authentication and authorization must be implemented**.
+- Users should receive **WhatsApp notifications before 1 hr of the deadline**.
 
+---
+
+## 💡 Example Usage
+
+### 📌 Task Management Commands
 # Adding a new task
-task-cli add "Buy groceries"
-# Output: Task added successfully (ID: 1)
+```
+add -n <task name> -d <dead line date time> -s <status>
+```
+### Output: Task added successfully - {task}
 
 # Updating and deleting tasks
-task-cli update 1 "Buy groceries and cook dinner"
-task-cli delete 1
-
-# Marking a task as in progress or done
-task-cli mark-in-progress 1
-task-cli mark-done 1
+-n, -d, and -s are optional options for the user.
+```
+update 1 -n <input task name> -d <input dead line date time> -s <input status>
+delete 1
+```
+### Output: Task Updated/ Deleted successfully - {task}
 
 # Listing all tasks
-task-cli list
+```
+list
+```
+### Output: List of Tasks
 
 # Listing tasks by status
-task-cli list done
-task-cli list todo
-task-cli list in-progress
-## Task Properties
+```
+list done
+list todo
+list in-progress
+```
+### Output: List of Tasks
 
-Each task should have the following properties:
+## 🔐 User Authentication
+### Login
+users can login with the help of the below command
+```
+login -u <user name> -p <password>
+login -phone <phone number> -p <password>
+```
+### Logout
+users can log out with the help of the below command.
+```
+logout
+```
+### Register
+users can register with the help of the below command
+```
+register -u <user name> -n <name> -p <password> -phone <phone number>
+-- <otp>
+```
+### Who AM I
+users can get the current user who logged in using the following command.
+```
+whoami
+```
 
-- **id**: A unique identifier for the task  
-- **description**: A short description of the task  
-- **status**: The status of the task (`todo`, `in-progress`, `done`)  
-- **createdAt**: The date and time when the task was created  
-- **updatedAt**: The date and time when the task was last updated  
-
-Make sure to add these properties to the JSON file when adding a new task and update them when updating a task.
-
----
-
-## Getting Started
-
-### 1. Set Up Your Development Environment
-- Choose a programming language you are comfortable with (e.g., Python, JavaScript, etc.).
-- Ensure you have a code editor or IDE installed (e.g., VSCode, PyCharm).
-
-### 2. Project Initialization
-- Create a new project directory for your Task Tracker CLI.
-- Initialize a version control system (e.g., Git) to manage your project.
-
-### 3. Implementing Features
-- Start by creating a basic CLI structure to handle user inputs.
-- Implement each feature one by one, ensuring to test thoroughly before moving to the next.  
-  _e.g., Implement adding task functionality first, listing next, then updating, marking as in progress, etc._
-
-### 4. Testing and Debugging
-- Test each feature individually to ensure they work as expected.
-- Look at the JSON file to verify that the tasks are being stored correctly.
-- Debug any issues that arise during development.
-
-### 5. Finalizing the Project
-- Ensure all features are implemented and tested.
-- Clean up your code and add comments where necessary.
-- Write a good `README` file on how to use your Task Tracker CLI.
-
----
-
-By the end of this project, you will have developed a practical tool that can help you or others manage tasks efficiently. This project lays a solid foundation for more advanced programming projects and real-world applications.
-
-**Happy coding! 🚀**
