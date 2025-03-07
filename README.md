@@ -39,7 +39,7 @@ Task Tracker is a project used to track and manage your tasks. This project is a
 ```
 add -n <task name> -d <dead line date time> -s <status>
 ```
-## Output: Task added successfully - {task}
+### Output: Task added successfully - {task}
 
 # Updating and deleting tasks
 -n, -d, and -s are optional options for the user.
@@ -47,13 +47,13 @@ add -n <task name> -d <dead line date time> -s <status>
 update 1 -n <input task name> -d <input dead line date time> -s <input status>
 delete 1
 ```
-## Output: Task Updated/ Deleted successfully - {task}
+### Output: Task Updated/ Deleted successfully - {task}
 
 # Listing all tasks
 ```
 list
 ```
-## Output: List of Tasks
+### Output: List of Tasks
 
 # Listing tasks by status
 ```
@@ -61,7 +61,7 @@ list done
 list todo
 list in-progress
 ```
-## Output: List of Tasks
+### Output: List of Tasks
 
 ## 🔐 User Authentication
 ### Login
