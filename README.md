@@ -10,7 +10,6 @@ Task Tracker is a project used to track and manage your tasks. This project is a
 - **Add a task**
 - **Update a task**
 - **Delete a task**
-- **Mark a task as in progress or done**
 - **List all tasks**
 - **Filter tasks by status** (`todo`, `in-progress`, `done`)  
 
@@ -29,7 +28,7 @@ Task Tracker is a project used to track and manage your tasks. This project is a
 - User actions and inputs **should be passed as command-line arguments**.
 - **Tasks must be stored in a MongoDB database**.
 - **Authentication and authorization must be implemented**.
-- Users should receive **WhatsApp notifications for upcoming tasks**.
+- Users should receive **WhatsApp notifications before 1 hr of the deadline**.
 
 ---
 
@@ -37,43 +36,52 @@ Task Tracker is a project used to track and manage your tasks. This project is a
 
 ### 📌 Task Management Commands
 # Adding a new task
- add "Buy groceries"
-# Output: Task added successfully (ID: 1)
+```
+add -n <task name> -d <dead line date time> -s <status>
+```
+## Output: Task added successfully - {task}
 
 # Updating and deleting tasks
- update 1 "Buy groceries and cook dinner"
- delete 1
-
-# Marking a task as in progress or done
- mark-in-progress 1
- mark-done 1
+-n, -d, and -s are optional options for the user.
+```
+update 1 -n <input task name> -d <input dead line date time> -s <input status>
+delete 1
+```
+## Output: Task Updated/ Deleted successfully - {task}
 
 # Listing all tasks
- list
+```
+list
+```
+## Output: List of Tasks
 
 # Listing tasks by status
- list done
- list todo
- list in-progress
+```
+list done
+list todo
+list in-progress
+```
+## Output: List of Tasks
 
 ## 🔐 User Authentication
 ### Login
 users can login with the help of the below command
 ```
 login -u <user name> -p <password>
+login -phone <phone number> -p <password>
 ```
 ### Logout
 users can log out with the help of the below command.
 ```
 logout
 ```
-### Users can register
+### Register
 users can register with the help of the below command
 ```
 register -u <user name> -n <name> -p <password> -phone <phone number>
 -- <otp>
 ```
-### Users can show who is logged in
+### Who AM I
 users can get the current user who logged in using the following command.
 ```
 whoami
