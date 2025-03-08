@@ -1,5 +1,5 @@
 # Ignore Maven target directory
-/target/
+*/target/
 /out/
 
 # Ignore IntelliJ IDEA specific files
