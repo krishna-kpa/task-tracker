@@ -2,19 +2,13 @@ package com.krishna.kpa.command;
 
 import picocli.CommandLine.Command;
 
+import static com.krishna.kpa.styles.ConsoleStyles.*;
+
 /**
  * Displays a colorful and readable ASCII banner for Task Tracker.
  */
-@Command(name = "home", version = "home 1.0")
+@Command(name = "home", version = "home 1.0", hidden = true)
 public class GreetingAscii implements Runnable {
-
-    // ANSI color codes
-    private static final String RESET = "\033[0m";
-    private static final String CYAN = "\033[36m";   // Cyan
-    private static final String YELLOW = "\033[33m"; // Yellow
-    private static final String GREEN = "\033[32m";  // Green
-    private static final String BLUE = "\033[34m";   // Blue
-    private static final String BOLD = "\033[1m";    // Bold
 
     /**
      * Runs the banner display.

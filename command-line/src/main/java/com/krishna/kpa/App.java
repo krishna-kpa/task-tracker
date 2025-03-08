@@ -1,6 +1,9 @@
 package com.krishna.kpa;
 
+import com.krishna.kpa.command.CreateTask;
 import com.krishna.kpa.command.GreetingAscii;
+import com.krishna.kpa.command.ListTask;
+import com.krishna.kpa.command.UpdateTask;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
@@ -19,7 +22,11 @@ public class App implements Runnable {
     @Override
     public void run() {
         CommandLine cmd = new CommandLine(this)
-                .addSubcommand("greet", new GreetingAscii());
+                .addSubcommand("greet", new GreetingAscii())
+                .addSubcommand("ls", new ListTask())
+                .addSubcommand("list", new ListTask())
+                .addSubcommand("create", new CreateTask())
+                .addSubcommand("update", new UpdateTask());
 
         cmd.execute("greet");
         Scanner scanner = new Scanner(System.in);
@@ -30,6 +37,10 @@ public class App implements Runnable {
             if ("exit".equalsIgnoreCase(input)) {
                 System.out.println("Exiting Task Tracker... Goodbye! 👋");
                 break;
+            }
+            if ("clear".equalsIgnoreCase(input) || "cls".equalsIgnoreCase(input)) {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
             }
 
             int exitCode = cmd.execute(input.split("\\s+"));
