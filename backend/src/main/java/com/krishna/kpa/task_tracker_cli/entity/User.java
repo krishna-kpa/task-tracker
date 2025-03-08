@@ -12,7 +12,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.time.LocalDateTime;
 
 /**
- * Entity representing the user
+ * Entity representing the user.
  *
  * @author Krishna Prasad A
  */
@@ -20,18 +20,18 @@ import java.time.LocalDateTime;
 @Setter
 public class User {
 
-    @Positive(message = "id of the task needs to be positive")
+    @Positive(message = "User ID must be a positive number.")
     private Integer id;
 
-    @Size(min = 1, max = 100, message = "name size should be between 1 and 100")
-    @NotBlank(message = "name cannot be blank")
+    @Size(min = 1, max = 100, message = "Name must be between 1 and 100 characters.")
+    @NotBlank(message = "Name cannot be empty.")
     private String name;
 
-    @NotBlank(message = "password value cannot be blank")
+    @NotBlank(message = "Password cannot be empty.")
     private String password;
 
-    @NotBlank(message = "phone number value cannot be blank")
-    @Pattern(regexp = "^(?:\\+91|91|0)?[789]\\d{9}$", message = "phone number pattern not matching")
+    @NotBlank(message = "Phone number cannot be empty.")
+    @Pattern(regexp = "^(?:\\+91|91|0)?[789]\\d{9}$", message = "Invalid phone number format. It must start with +91, 91, or 0 and contain 10 digits.")
     private String phoneNumber;
 
     @LastModifiedDate
