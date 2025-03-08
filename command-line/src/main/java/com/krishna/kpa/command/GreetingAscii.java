@@ -15,9 +15,20 @@ public class GreetingAscii implements Runnable {
      */
     @Override
     public void run() {
-        System.out.println(BOLD + CYAN + "===============================" + RESET);
-        System.out.println(BOLD + YELLOW + "   TASK TRACKER CLI - v1.0    " + RESET);
-        System.out.println(BOLD + CYAN + "===============================\n" + RESET);
+        System.out.println(BOLD + CYAN + "=".repeat(170) + RESET);
+        System.out.printf(BOLD + CYAN + "| %-114s " + CYAN + "|\n" + RESET, YELLOW + centerText("TASK TRACKER CLI - v1.0", 167) + RESET);
+        System.out.println(BOLD + CYAN + "=".repeat(170) + RESET);
         System.out.println(GREEN + "🚀 Stay organized, track tasks efficiently!\n" + RESET);
+    }
+
+
+    /**
+     * Centers text in a given width.
+     */
+    private String centerText(String text, int width) {
+        if (text.length() >= width) return text.substring(0, width); // Truncate if too long
+        int padding = (width - text.length()) / 2;
+        int extraPadding = (width - text.length()) % 2; // Handle odd-length cases
+        return " ".repeat(padding) + text + " ".repeat(padding + extraPadding);
     }
 }

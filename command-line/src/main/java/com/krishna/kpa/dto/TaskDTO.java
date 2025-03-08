@@ -6,6 +6,11 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+/**
+ * DTO - for representing Task
+ *
+ * @author Krishna Prasad A
+ */
 @Getter
 @Setter
 public class TaskDTO {

@@ -10,11 +10,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Command for updating a task
+ *
+ * @author Krishna Prasad A
+ */
 @Command(name = "update", description = "Updates an existing task")
 public class UpdateTask implements Runnable {
 
     @Option(names = {"-i", "--id"}, required = true, description = "ID of the task to update")
-    private Integer taskId;  // Use wrapper to handle missing input
+    private Integer taskId;
 
     @Option(names = {"-n", "--name"}, description = "New name of the task")
     private String name;
@@ -28,7 +33,7 @@ public class UpdateTask implements Runnable {
     @Option(names = {"-a", "--alert"}, description = "New alert time (format: dd-MM-yyyy HH:mm or dd-MM-yyyy-HH:mm)")
     private String alertTime;
 
-    private final TaskTrackerCLIService taskService = new TaskTrackerCLIService(); // Service layer
+    private final TaskTrackerCLIService taskService = new TaskTrackerCLIService();
 
     @Override
     public void run() {
@@ -41,7 +46,7 @@ public class UpdateTask implements Runnable {
         if (alertTime != null && !alertTime.isEmpty()) {
             parsedAlertTime = parseAlertTime(alertTime);
             if (parsedAlertTime == null) {
-                return; // Invalid format, error already printed
+                return;
             }
         }
 
@@ -55,14 +60,14 @@ public class UpdateTask implements Runnable {
             }
         }
 
-        // ✅ Create DTO with updated values
+
         TaskDTO updatedTask = new TaskDTO();
         updatedTask.setName(name != null && !name.isEmpty() ? name : null);
         updatedTask.setDescription(description != null && !description.isEmpty() ? description : null);
         updatedTask.setAlertTime(parsedAlertTime);
         updatedTask.setStatus(taskStatus);
 
-        // ✅ Call service to update task
+
         try {
             boolean success = taskService.updateTask(taskId, updatedTask);
             if (success) {

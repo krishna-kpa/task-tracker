@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Service this will be handling all the api calls
+ *
+ * @author Krishna Prasad A
+ */
 public class TaskTrackerCLIService {
 
     public List<TaskDTO> getAllTask(Integer id, TaskStatus status, Set<Integer> ids) {
@@ -31,6 +36,10 @@ public class TaskTrackerCLIService {
     }
 
     public boolean updateTask(int taskId, TaskDTO updatedTask) {
+        return true;
+    }
+
+    public boolean deleteTask(Integer taskId) {
         return true;
     }
 }

@@ -13,6 +13,11 @@ import java.util.Set;
 
 import static com.krishna.kpa.styles.ConsoleStyles.*;
 
+/**
+ * Command for creating a task
+ *
+ * @author Krishna Prasad A
+ */
 @Command(
         name = "list",
         version = "1.0",
@@ -42,17 +47,17 @@ public class ListTask implements Runnable {
      */
     @Override
     public void run() {
-        // Validation: Ensure `id` is used alone
+
         if (id != null && (ids != null || taskStatus != null)) {
             System.out.println(RED + "⚠️ Invalid command! The '--id' option must be used alone. " +
                     "Use '--ids' instead if filtering multiple tasks." + RESET);
             return;
         }
 
-        // Fetch tasks based on the valid combination of filters
+
         List<TaskDTO> tasks = taskTrackerCLIService.getAllTask(id, taskStatus, ids);
 
-        // Print task list
+
         printTaskList(tasks);
     }
 
@@ -60,7 +65,7 @@ public class ListTask implements Runnable {
      * Prints the formatted task list.
      */
     private void printTaskList(List<TaskDTO> tasks) {
-        // Constants for formatting
+
         final String BORDER = RED + "+-----+---------------------------+----------------------------------------------------+----------------------+-------------+----------------------+----------------------+" + RESET;
         final String HEADER_FORMAT = RED + "| " + YELLOW_BRIGHT + "%-3s" + RED + " | "
                 + YELLOW_BRIGHT + "%-25s" + RED + " | "
@@ -78,14 +83,14 @@ public class ListTask implements Runnable {
                 + YELLOW_BRIGHT + "%-20s" + RED + " | "
                 + YELLOW_BRIGHT + "%-20s " + RED + "|\n" + RESET;
 
-        // Print header
+
         System.out.println(BORDER);
         System.out.printf(RED + "| %-114s " + RED + "|\n" + RESET, BLUE + centerText("TASKS LIST", 167) + RESET);
         System.out.println(BORDER);
         System.out.printf(HEADER_FORMAT, "ID", "Name", "Description", "Alert Time", "Status", "Created Time", "Last Updated");
         System.out.println(BORDER);
 
-        // Print task data
+
         for (TaskDTO task : tasks) {
             System.out.printf(ROW_FORMAT,
                     task.getId(),
@@ -98,7 +103,7 @@ public class ListTask implements Runnable {
             );
         }
 
-        // Print footer
+
         System.out.println(BORDER);
     }
 
@@ -113,9 +118,9 @@ public class ListTask implements Runnable {
      * Centers text in a given width.
      */
     private String centerText(String text, int width) {
-        if (text.length() >= width) return text.substring(0, width); // Truncate if too long
+        if (text.length() >= width) return text.substring(0, width);
         int padding = (width - text.length()) / 2;
-        int extraPadding = (width - text.length()) % 2; // Handle odd-length cases
+        int extraPadding = (width - text.length()) % 2;
         return " ".repeat(padding) + text + " ".repeat(padding + extraPadding);
     }
 }
