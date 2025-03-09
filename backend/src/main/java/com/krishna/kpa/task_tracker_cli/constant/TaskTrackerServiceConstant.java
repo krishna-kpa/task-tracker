@@ -7,7 +7,7 @@ package com.krishna.kpa.task_tracker_cli.constant;
  * @author Krishna Prasad A
  */
 public class TaskTrackerServiceConstant {
-    public static final String TASK_SCHEMA_NAME = "Task DTO";
+    public static final String TASK_SCHEMA_NAME = "Task";
     public static final String TASK_SCHEMA_DESCRIPTION = "DTO for representing the task";
     public static final String ID_DESCRIPTION = "ID of the task";
     public static final String NAME_DESCRIPTION = "Name of the task";
