@@ -36,8 +36,8 @@ import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConsta
 import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConstant.ID_DESCRIPTION;
 import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConstant.LAST_UPDATED_TIME_DESCRIPTION;
 import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConstant.NAME_DESCRIPTION;
-import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConstant.SCHEMA_DESCRIPTION;
-import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConstant.SCHEMA_NAME;
+import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConstant.TASK_SCHEMA_DESCRIPTION;
+import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConstant.TASK_SCHEMA_NAME;
 import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerServiceConstant.STATUS_DESCRIPTION;
 import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerValidationMessagesKeyConstants.KEY_ALERT_TIME_NULL;
 import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerValidationMessagesKeyConstants.KEY_CREATED_TIME_NULL;
@@ -55,8 +55,8 @@ import static com.krishna.kpa.task_tracker_cli.constant.TaskTrackerValidationMes
  * @author Krishna Prasad A
  */
 @Schema(
-        name = SCHEMA_NAME,
-        description = SCHEMA_DESCRIPTION
+        name = TASK_SCHEMA_NAME,
+        description = TASK_SCHEMA_DESCRIPTION
 )
 @Getter
 @Setter

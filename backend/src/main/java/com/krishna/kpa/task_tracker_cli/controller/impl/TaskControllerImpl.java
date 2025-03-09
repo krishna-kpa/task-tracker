@@ -76,8 +76,8 @@ public class TaskControllerImpl implements TaskTrackerController {
     @PutMapping("/{id}")
     public ResponseEntity<Boolean> updateTaskById(
             @PathVariable Integer id,
-            @RequestBody
             @JsonView(ApiInputUpdate.class)
+            @RequestBody
             @Validated(ApiInputUpdate.class) TaskDTO inputTask) {
         return null;
     }
