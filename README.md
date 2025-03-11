@@ -1,6 +1,6 @@
 # Task Tracker - Requirement Document
 
-Task Tracker is a project used to track and manage your tasks. This project is a **Command-Line Interface (CLI) application** that helps users keep track of their tasks—what needs to be done, what is in progress, and what has been completed. Once the application is started then it will be a commandline interface in which users can execute commands and achieve their needs.
+Task Tracker is a project used to track and manage your tasks. This project is a **Command Line Interface (CLI) application** that helps users keep track of their tasks—what needs to be done, what is in progress, and what has been completed. Once the application is started then it will be a commandline interface in which users can execute commands and achieve their needs.
 
 ---
 
